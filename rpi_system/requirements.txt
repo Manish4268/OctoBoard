@@ -1,0 +1,22 @@
+# Raspberry Pi System Requirements
+# For hardware control and API server
+
+# Core libraries
+numpy>=1.22
+pandas>=1.5
+matplotlib>=3.5
+
+# Adafruit CircuitPython libraries (only needed on actual Raspberry Pi)
+adafruit-blinka>=7.3.3
+adafruit-circuitpython-mcp4728>=1.0.8
+adafruit-circuitpython-ads1x15>=2.3.9
+adafruit-circuitpython-mcp230xx>=1.0.10
+
+# API and Web Framework
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.0.0
+requests>=2.31.0
+
+# Scheduling
+schedule>=1.2.0
