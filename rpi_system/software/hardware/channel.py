@@ -7,7 +7,8 @@ import numpy as np
 if SIMULATION_MODE:
     from .mock_hardware import P0, P1, P2, P3, _ADS1X15_DIFF_CHANNELS, _ADS1X15_PGA_RANGE
 else:
-    from adafruit_ads1x15.ads1115 import P0, P1, P2, P3
+    # Define pin constants for newer library versions (they're just integers 0-3)
+    P0, P1, P2, P3 = 0, 1, 2, 3
     from adafruit_ads1x15.analog_in import _ADS1X15_DIFF_CHANNELS, _ADS1X15_PGA_RANGE
 
 class Channel:

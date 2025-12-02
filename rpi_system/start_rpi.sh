@@ -4,7 +4,7 @@
 
 # Configuration - EDIT THESE VALUES
 export RPI_ID="${RPI_ID:-rpi_1}"                    # RPi identifier (rpi_1, rpi_2, or rpi_3)
-export MAIN_PC_IP="${MAIN_PC_IP:-192.168.1.100}"    # Main PC IP address
+export MAIN_PC_IP="${MAIN_PC_IP:-192.168.2.1}"      # Main PC IP address (direct Ethernet connection)
 export API_PORT="${API_PORT:-8001}"                 # API port (8001 for RPi1, 8002 for RPi2, 8003 for RPi3)
 export OCTOBOARD_SIMULATION="${OCTOBOARD_SIMULATION:-False}"  # False for real hardware, True for testing
 export OCTOBOARD_I2C_BUS="${OCTOBOARD_I2C_BUS:-1}"  # I2C bus number (usually 1)

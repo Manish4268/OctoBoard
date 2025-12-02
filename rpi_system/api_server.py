@@ -427,7 +427,7 @@ def save_config_file(sample_id: str, config: MeasurementConfig):
 
 def save_iv_data_locally(sample_id: str, pixel: str, timestamp: str, data: List[Dict]) -> Path:
     """Save IV data to local file."""
-    import pandas as pd
+    import csv
     
     # Create directory structure
     local_dir = Path(f"/tmp/octoboard_{rpi_id}/IV/{sample_id}/{pixel}")
@@ -437,8 +437,12 @@ def save_iv_data_locally(sample_id: str, pixel: str, timestamp: str, data: List[
     filename = f"IV_{timestamp}.csv"
     filepath = local_dir / filename
     
-    df = pd.DataFrame(data)
-    df.to_csv(filepath, index=False)
+    # Write CSV using csv module instead of pandas
+    if data:
+        with open(filepath, 'w', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=data[0].keys())
+            writer.writeheader()
+            writer.writerows(data)
     
     print(f"[{rpi_id}] Saved: {filepath}")
     return filepath

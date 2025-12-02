@@ -17,11 +17,11 @@ DATA_ROOT = Path("C:/Users/ManishJadhav/SynologyDrive/Rayleigh/Outdoor Data")
 DATA_ROOT.mkdir(parents=True, exist_ok=True)
 
 # RPi Configuration
-# For testing locally, use localhost. For production, use actual IPs (192.168.1.101-103)
+# For production with real hardware - direct Ethernet connection
 RPIS = {
-    "RPi 1": {"url": "http://localhost:8001", "id": "rpi_1"},
-    "RPi 2": {"url": "http://localhost:8002", "id": "rpi_2"},
-    "RPi 3": {"url": "http://localhost:8003", "id": "rpi_3"},
+    "RPi 1": {"url": "http://192.168.2.10:8001", "id": "rpi_1"},
+    # "RPi 2": {"url": "http://192.168.2.11:8002", "id": "rpi_2"},  # Add when available
+    # "RPi 3": {"url": "http://192.168.2.12:8003", "id": "rpi_3"},  # Add when available
 }
 
 FILE_RECEIVER_URL = "http://localhost:8000"
